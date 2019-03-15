@@ -11,7 +11,7 @@
     <div class="content">
       <img src="{{ article.image }}" alt="" />
       {{ article.content | raw }}
-      <a href="{{ path('blog_show') }}" class="btn btn-primary">Keep reading</a>
+      <a href="{{ path('blog_show',{'id': article.id }) }}" class="btn btn-primary">Keep reading</a>
     </div>
   </article>
 
