@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+
+<section class="articles">
+
+    <article>
+        <h2>Title of the article</h2>
+        <div class="metadata">Wrote 10/05/2018 in the category Nature</div>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, libero deleniti! Doloremque excepturi sit animi!</div>
+            <div>Excepturi magnam laborum ducimus quasi corporis! Harum doloremque doloribus nihil minima odio, quasi dolorem nostrum?</div>
+            <a href="{{ path('blog_show') }}" class="btn btn-primary">Keep reading</a>
+        </div>
+    </article>
+    <article>
+        <h2>Title of the article</h2>
+        <div class="metadata">Wrote 10/05/2018 in the category Nature</div>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <div>Sapiente dolorum iste suscipit beatae aut alias quos quisquam illo? Magni dignissimos esse optio tenetur.</div>
+            <div>Error sapiente commodi dolorem ipsum enim harum, rerum aspernatur impedit itaque expedita laudantium eveniet a.</div>
+            <a href="{{ path('blog_show') }}" class="btn btn-primary">Keep reading</a>
+        </div>
+    </article>
+    <article>
+        <h2>Title of the article</h2>
+        <div class="metadata">Wrote 10/05/2018 in the category Nature</div>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <div>Nesciunt mollitia delectus a ab eligendi odio, repudiandae deleniti? Eius eum doloribus odit odio nesciunt.</div>
+            <div>Laboriosam alias dolores soluta fugiat animi placeat maxime eligendi tenetur non, harum repellat perspiciatis reiciendis!</div>
+            <a href="{{ path('blog_show') }}" class="btn btn-primary">Keep reading</a>
+        </div>
+    </article>
+</section>
+{% endblock %}
