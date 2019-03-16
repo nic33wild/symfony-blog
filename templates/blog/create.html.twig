@@ -4,7 +4,11 @@
 
 {% block body %}
   
-    <h1>Create new article</h1>
+    {% if editMode %}
+        <h1>Edit article</h1>
+    {% else %}
+        <h1>Create new article</h1>
+    {% endif %}
 
     {{ form_start(formArticle) }}
 
@@ -12,7 +16,13 @@
     {{  form_row(formArticle.content, {'attr': {'placeholder': "Content of the article"}}) }}
     {{  form_row(formArticle.image, {'attr': {'placeholder': "image URL"}}) }}
     
-    <button type="submit" class="btn btn-success">Ajouter l'article></button>
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+            Save changes
+        {% else %}
+            Create article
+        {% endif %}
+    </button>
 
     {{ form_end(formArticle) }}
 {% endblock %}
