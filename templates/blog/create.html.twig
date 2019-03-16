@@ -17,11 +17,13 @@
     {{  form_row(formArticle.image, {'attr': {'placeholder': "image URL"}}) }}
     
     <button type="submit" class="btn btn-success">
+
         {% if editMode %}
             Save changes
         {% else %}
             Create article
         {% endif %}
+
     </button>
 
     {{ form_end(formArticle) }}
