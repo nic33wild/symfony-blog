@@ -45,21 +45,9 @@ class BlogController extends AbstractController
         $article = new Article();
 
         $form = $this->createFormBuilder($article)
-                     ->add('title', TextType::class, [
-                         'attr' => [
-                             'placeholder' => "Title of the article"
-                         ]
-                     ])
-                     ->add('content', TextareaType::class, [
-                         'attr' => [
-                             'placeholder' => "Article content"
-                         ]
-                     ])
-                     ->add('image', TextType::class, [
-                         'attr' => [
-                             'placeholder' => "Image of the article"
-                         ]
-                     ])
+                     ->add('title')
+                     ->add('content')
+                     ->add('image')
                      ->getForm();
 
         return $this->render('blog/create.html.twig', [

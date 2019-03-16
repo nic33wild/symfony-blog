@@ -8,8 +8,10 @@
 
     {{ form_start(formArticle) }}
 
-    {{  form_widget(formArticle) }}
-
+    {{  form_row(formArticle.title, {'attr': {'placeholder': "Title of the article"}}) }}
+    {{  form_row(formArticle.content, {'attr': {'placeholder': "Content of the article"}}) }}
+    {{  form_row(formArticle.image, {'attr': {'placeholder': "image URL"}}) }}
+    
     <button type="submit" class="btn btn-success">Ajouter l'article></button>
 
     {{ form_end(formArticle) }}
