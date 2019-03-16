@@ -8,6 +8,7 @@ use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BlogController extends AbstractController
 {
@@ -46,20 +47,17 @@ class BlogController extends AbstractController
         $form = $this->createFormBuilder($article)
                      ->add('title', TextType::class, [
                          'attr' => [
-                             'placeholder' => "Title of the article",
-                             'class' => 'form-control'
+                             'placeholder' => "Title of the article"
                          ]
                      ])
                      ->add('content', TextareaType::class, [
                          'attr' => [
-                             'placeholder' => "Article content",
-                             'class' => 'form-control'
+                             'placeholder' => "Article content"
                          ]
                      ])
                      ->add('image', TextType::class, [
                          'attr' => [
-                             'placeholder' => "Image of the article",
-                             'class' => 'form-control'
+                             'placeholder' => "Image of the article"
                          ]
                      ])
                      ->getForm();
