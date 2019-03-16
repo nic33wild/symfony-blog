@@ -3,4 +3,23 @@
 {% block body %}
   
     <h1>Creation of an article</h1>
+
+    {{ form_start(formArticle) }}
+
+    <div class="form-group">
+        <label for="">Title</label>
+        {{ form_widget(formArticle.title) }}
+    </div>
+
+    <div class="form-group">
+            <label for="">Content</label>
+            {{ form_widget(formArticle.content) }}
+        </div>
+
+        <div class="form-group">
+                <label for="">Image</label>
+                {{ form_widget(formArticle.image) }}
+            </div>
+
+    {{ form_end(formArticle) }}
 {% endblock %}
