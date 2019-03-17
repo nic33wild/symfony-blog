@@ -11,8 +11,10 @@
     {% endif %}
 
     {{ form_start(formArticle) }}
+    
 
     {{  form_row(formArticle.title, {'attr': {'placeholder': "Title of the article"}}) }}
+    {{  form_row(formArticle.category) }}
     {{  form_row(formArticle.content, {'attr': {'placeholder': "Content of the article"}}) }}
     {{  form_row(formArticle.image, {'attr': {'placeholder': "image URL"}}) }}
     
