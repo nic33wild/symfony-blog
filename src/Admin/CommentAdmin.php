@@ -11,25 +11,22 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Category;
 use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\AdminBundle\Form\Type\Filter\DateTimeType;
+use App\Entity\Article;
 
-final class ArticleAdmin extends AbstractAdmin
+final class CommentAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
 
         ->with('Content', ['class' => 'col-md-9'])
-            ->add('title', TextType::class)
+            ->add('author', TextType::class)
             ->add('content', TextareaType::class)
         ->end()
 
-        ->with('Image', ['class' => 'col-md-3'])
-            ->add('image', TextType::class)
-        ->end()
-
         ->with('Meta data', ['class' => 'col-md-3'])
-            ->add('category', ModelType::class, [
-                'class' => Category::class,
+            ->add('article', ModelType::class, [
+                'class' => Article::class,
                 'property' => 'title',
             ])
         ->end()
@@ -42,7 +39,7 @@ final class ArticleAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title')->add('content')->add('image', TextType::class);
+        $listMapper->addIdentifier('author')->add('content');
     }
 
 }
