@@ -8,6 +8,7 @@
             <img src="{{article.image}}" alt="Foto article {{ article.title }}">
             {{ article.content | raw }}
         </div>
+        <hr>
     </article>
 
     <section id="commentaires">
@@ -35,13 +36,12 @@
         </button>
         {{ form_end(commentForm) }}
         {% else %}
-        
+
             <h2>If you want to write a comment you have to login.</h2>
             <a href="{{ path('security_login')}}" class="btn btn-primary">
                 Connect
             </a>
         {% endif %}
-
     </section>
 
 

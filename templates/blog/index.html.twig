@@ -2,21 +2,30 @@
 %} {% block body %}
 
 <section class="articles">
-
   {% for article in articles %}
 
   <article>
-    <h2>{{ article.title }}</h2>
-    <div class="metadata">Wrote the {{ article.createdAt | date('d/m/Y') }} at {{ article.createdAt | date('H:i') }} in the category Nature</div>
-    <div class="content">
-      <img src="{{ article.image }}" alt="" />
-      {{ article.content | raw }}
-      <a href="{{ path('blog_show',{'id': article.id }) }}" class="btn btn-primary">Keep reading</a>
+    <div class="jumbotron">
+      <h2 class="display-5">{{ article.title }}</h2>
+      <p class="metadata">
+        Wrote the {{ article.createdAt | date('d/m/Y') }} at
+        {{ article.createdAt | date('H:i') }} in the category Nature
+      </p>
+      <div class="content">
+        <img src="{{ article.image }}" alt="" />
+        {{ article.content | raw }}
+        <p class="lead">
+          <a
+            href="{{ path('blog_show', { id: article.id }) }}"
+            class="btn btn-primary"
+            >Keep reading</a
+          >
+        </p>
+      </div>
     </div>
   </article>
 
   {% endfor %}
-
 </section>
 
 {% endblock %}
