@@ -1,5 +1,4 @@
-{% extends 'base.html.twig' %}
-{% block body %}
+{% extends 'base.html.twig' %} {% block body %}
 <h1>Welcome to my Symfony 4 Blog</h1>
 
 <div class="row">
@@ -9,11 +8,57 @@
 
   <div class="col-lg-4">
     <p>
-      Hi.
-      My name is Nicola. I am an italian Web Developer.
-      This site is an example of Blog developed with Symfony 4.
+      Hi. My name is Nicola. I am an italian Web Developer. This site is an
+      example of Blog developed with Symfony 4.
+    </p>
+  </div>
+  <div class="col-lg-12 ">
+    <h2>A description of this project :</h2>
 
+    <h3 id="technologies">Technologies</h3>
+    <ul>
+      <li>Symfony 4</li>
+      <li>PHP</li>
+      <li>Composer</li>
+      <li>Doctrine</li>
+      <li>Twig</li>
+      <li>Sonata Admin Bundle</li>
+      <li>Webpack Encore Bundle</li>
+    </ul>
+
+    <h3 id="routes">Routes</h3>
+    <ul>
+      <li><p>/ : this page is the homepage.</p></li>
+      <li><p>/blog : a page with a list of all articles</p></li>
+      <li><p>/blog/new: a page to create a new article</p></li>
+      <li>
+        <p>blog/{id_article} : a page with an article and his comments</p>
+      </li>
+      <li><p>blog/{id_article}/edit: a page to edit an article</p></li>
+      <li><p>/connexion: a page to login to the site</p></li>
+      <li><p>/registration: a page to subscribe</p></li>
+      <li>
+        <p>
+          /admin : a page with a panel from Sonata bundle that permit to
+          administrate articles, comments, and categories
+        </p>
+      </li>
+    </ul>
+
+    <h3 id="entities">Database entities</h3>
+    <ul>
+      <li>user_account (<strong>id</strong>, email, username, password)</li>
+      <li>article(<strong>id</strong>, category_id, title, content, image, created_at)</li>
+      <li>category(<strong>id</strong>, title, description)</li>
+      <li>comment(<strong>id</strong>, article_id, author, content, created_at)</li>
+    </ul>
+
+    <h3 id="progress">Work Progress</h3>
+    <p>Actually with login it is possible to visualize differents buttons and public comments
+       but all users have the same role 'ROLE_USER' and all users can use Sonata admin dashboard.
+       Different authorizations for different roles with secure authentication COMING SOON</p>
   </div>
 </div>
+<hr />
 
 {% endblock %}
