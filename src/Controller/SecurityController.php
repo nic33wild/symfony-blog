@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\RegistrationType;
-use App\Entity\User;
+use App\Entity\User_account;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -23,10 +23,10 @@ class SecurityController extends AbstractController
     // }
 
     /**
-     * @Route("/inscription", name="security_registration")
+     * @Route("/registration", name="security_registration")
      */
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder){
-        $user = new User();
+        $user = new User_account();
 
         $form = $this->createForm(RegistrationType::class, $user);
 
