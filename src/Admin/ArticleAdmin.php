@@ -12,6 +12,7 @@ use App\Entity\Category;
 use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\AdminBundle\Form\Type\Filter\DateTimeType;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 final class ArticleAdmin extends AbstractAdmin
 {
@@ -21,7 +22,7 @@ final class ArticleAdmin extends AbstractAdmin
 
         ->with('Content', ['class' => 'col-md-9'])
             ->add('title', TextType::class)
-            ->add('content', TextareaType::class)
+            ->add('content', CKEditorType::class)
         ->end()
 
         ->with('Image', ['class' => 'col-md-3'])

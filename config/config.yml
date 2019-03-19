@@ -1,0 +1,7 @@
+fos_ck_editor:
+    default_config: creation_form
+    configs:
+        creation_form:
+            toolbar: basic
+            config.removePlugins = 'elementspath,save,font';
+            

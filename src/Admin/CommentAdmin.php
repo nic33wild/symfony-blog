@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\AdminBundle\Form\Type\Filter\DateTimeType;
 use App\Entity\Article;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 final class CommentAdmin extends AbstractAdmin
 {
@@ -22,7 +23,7 @@ final class CommentAdmin extends AbstractAdmin
 
         ->with('Content', ['class' => 'col-md-9'])
             ->add('author', TextType::class)
-            ->add('content', TextareaType::class)
+            ->add('content', CKEditorType::class)
         ->end()
 
         ->with('Meta data', ['class' => 'col-md-3'])
