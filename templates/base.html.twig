@@ -7,9 +7,18 @@
       rel="stylesheet"
       href="https://bootswatch.com/4/flatly/bootstrap.min.css"
     />
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %} {# 'app' must match the first argument to addEntry()
+    in webpack.config.js #}
+    {{
+      encore_entry_link_tags("app")
+    }}
+
+    <!-- Renders a link tag (if your module requires any CSS)
+    <link rel="stylesheet" href="/build/app.css"> -->
+    {% endblock %}
   </head>
   <body>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="{{ path('home') }}">SymfonyBlog</a>
       <button
@@ -26,7 +35,7 @@
 
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="{{ path('blog') }}">Articles</a>
           </li>
           <li class="nav-item">
@@ -39,6 +48,11 @@
               Connect
             </a>
           </li>
+          <li class="nav-item">
+              <a href="{{ path('security_registration') }}" class="nav-link">
+                Register
+              </a>
+            </li>
           {% else %}
           <li class="nav-item">
             <a href="{{ path('security_logout') }}" class="nav-link">
@@ -50,8 +64,28 @@
       </div>
     </nav>
     <div class="container">
-        {% block body %}{% endblock %}
+      {% block body %}{% endblock %}
+      
+      {% block footer %}
+      <div id="footer">
+        <div class="footer-copyright text-center py-3">
+          You can find this project on my GitHub account:
+          <a href="https://github.com/nic33wild/symfony-blog/tree/master" target="_blank"> GitHub</a>
+        </div>
+      </div>
+      {% endblock %}
+
     </div>
-    {% block javascripts %}{% endblock %}
+    {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    {{ encore_entry_script_tags("app") }}
+
+    <!-- Renders app.js & a webpack runtime.js file
+        <script src="/build/runtime.js"></script>
+        <script src="/build/app.js"></script> -->
+    {% endblock %}
   </body>
 </html>

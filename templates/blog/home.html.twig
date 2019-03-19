@@ -1,9 +1,86 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block body %}
+<h1>Welcome to my Symfony 4 Blog</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-xs-6">
+      <img src="https://lorempixel.com/640/480/" alt="Nicola_photo" />
+    </div>
 
-{% block body %}
-<h1>Wellcome to my Blog </h1>
+    <div class="col-lg-4 col-xs-6">
+      <p>
+        Hi. I am an italian Web Developer. This site is an example of Blog
+        developed with Symfony 4. 
+      </p>
 
+      <h3 id="technologies">Technologies used in this project</h3>
+      <ul>
+        <li>Symfony 4</li>
+        <li>PHP</li>
+        <li>Doctrine</li>
+        <li>mysql</li>
+        <li>Composer</li>
+        <li>Yarn</li>
+        <li>Twig</li>
+        <li>Sonata Admin Bundle</li>
+        <li>Webpack Encore Bundle</li>
+        <li>Doctrine fixtures bundle</li>
+        <li>Symfony security bundle</li>
+        <li>and more ...</li>
+      </ul>
+      <p><small>N.B. All images are charged randomly from lorempixel.com.</small></p>
+    </div>
+  </div>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis et optio voluptas odit iusto, animi illum est explicabo sint deserunt aliquid cum praesentium? Quas qui officiis aliquid repellat voluptatem voluptatum ab enim? Ad corrupti impedit maiores optio ipsum magni iure.</p>
-<p>Beatae hic sequi ullam aut veniam dolorem omnis dolorum iure alias, optio commodi! Quos consectetur ut corrupti fugiat officiis! Cupiditate reiciendis, quis repellendus ad, tenetur perspiciatis beatae fuga qui reprehenderit, quam expedita consequuntur commodi eveniet quas nemo atque dolore exercitationem!</p>
+  <div class="container" id="homePage">
+    <div class="row">
+      <div class="col-lg-12 col-xs">
+        <h2>What you should know about this project:</h2>
+
+        <h3 id="routes">Routes</h3>
+        <ul>
+          <li><p>/ : this page is the homepage.</p></li>
+          <li><p>/blog : a page with a list of all articles</p></li>
+          <li><p>/blog/new: a page to create a new article</p></li>
+          <li>
+            <p>blog/{id_article} : a page with an article and his comments</p>
+          </li>
+          <li><p>blog/{id_article}/edit: a page to edit an article</p></li>
+          <li><p>/connexion: a page to login to the site</p></li>
+          <li><p>/registration: a page to subscribe</p></li>
+          <li>
+            <p>
+              /admin : a page with a panel from Sonata bundle that permit to
+              administrate articles, comments, and categories
+            </p>
+          </li>
+        </ul>
+
+        <h3 id="entities">Database entities</h3>
+        <ul>
+          <li>user_account (<strong>id</strong>, email, username, password)</li>
+          <li>
+            article(<strong>id</strong>, category_id, title, content, image,
+            created_at)
+          </li>
+          <li>category(<strong>id</strong>, title, description)</li>
+          <li>
+            comment(<strong>id</strong>, article_id, author, content,
+            created_at)
+          </li>
+        </ul>
+
+        <h3 id="progress">Work Progress</h3>
+        <p>
+          Actually with login it is possible to visualize differents buttons and
+          publics comments but all users have the same role 'ROLE_USER' and all
+          users can use Sonata admin dashboard or create/edit articles and
+          categories. Different authorizations for different roles with secure
+          authentication COMING SOON
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+
 {% endblock %}

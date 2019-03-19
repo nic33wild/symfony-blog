@@ -33,6 +33,7 @@ final class ArticleAdmin extends AbstractAdmin
                 'property' => 'title',
             ])
         ->end()
+        
         ->add('createdAt', null, [
             'format' => 'Y-m-d H:i',
         ])
