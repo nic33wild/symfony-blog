@@ -7,11 +7,13 @@
       rel="stylesheet"
       href="https://bootswatch.com/4/flatly/bootstrap.min.css"
     />
-    {% block stylesheets %}
-                {# 'app' must match the first argument to addEntry() in webpack.config.js #}
-                {{ encore_entry_link_tags('app') }}
+    {% block stylesheets %} {# 'app' must match the first argument to addEntry()
+    in webpack.config.js #}
+    {{
+      encore_entry_link_tags("app")
+    }}
 
-                <!-- Renders a link tag (if your module requires any CSS)
+    <!-- Renders a link tag (if your module requires any CSS)
                      <link rel="stylesheet" href="/build/app.css"> -->
     {% endblock %}
   </head>
@@ -32,7 +34,7 @@
 
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="{{ path('blog') }}">Articles</a>
           </li>
           <li class="nav-item">
@@ -45,6 +47,11 @@
               Connect
             </a>
           </li>
+          <li class="nav-item">
+              <a href="{{ path('security_registration') }}" class="nav-link">
+                Register
+              </a>
+            </li>
           {% else %}
           <li class="nav-item">
             <a href="{{ path('security_logout') }}" class="nav-link">
@@ -56,10 +63,20 @@
       </div>
     </nav>
     <div class="container">
-        {% block body %}{% endblock %}
+      {% block body %}{% endblock %}
+      
+      {% block footer %}
+      <div id="footer">
+        <div class="footer-copyright text-center py-3">
+          You can find this project in my GitHub:
+          <a href="https://github.com/nic33wild/symfony-blog/tree/master" target="_blank"> GitHub</a>
+        </div>
+      </div>
+      {% endblock %}
+
     </div>
     {% block javascripts %}
-    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags("app") }}
 
     <!-- Renders app.js & a webpack runtime.js file
         <script src="/build/runtime.js"></script>
