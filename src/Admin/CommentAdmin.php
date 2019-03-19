@@ -12,6 +12,7 @@ use App\Entity\Category;
 use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\AdminBundle\Form\Type\Filter\DateTimeType;
 use App\Entity\Article;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
 
 final class CommentAdmin extends AbstractAdmin
 {
@@ -36,10 +37,21 @@ final class CommentAdmin extends AbstractAdmin
  
         ;
     }
+    
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add('author')
+            ->add('content');
+    }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('author')->add('content');
+        $listMapper
+            ->addIdentifier('author')
+            ->add('content')
+            ->add('article.title')
+            ;
     }
 
 }

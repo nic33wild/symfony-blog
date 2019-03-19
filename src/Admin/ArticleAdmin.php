@@ -11,6 +11,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Category;
 use Sonata\AdminBundle\Form\Type\ModelType;
 use Sonata\AdminBundle\Form\Type\Filter\DateTimeType;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
 
 final class ArticleAdmin extends AbstractAdmin
 {
@@ -41,9 +42,21 @@ final class ArticleAdmin extends AbstractAdmin
         ;
     }
 
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add('title')
+            ->add('content');
+    }
+
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title')->add('content')->add('image', TextType::class);
+        $listMapper
+            ->addIdentifier('title')
+            ->add('content')
+            ->add('image', TextType::class)
+            ->add('category.title')
+            ;
     }
 
 }

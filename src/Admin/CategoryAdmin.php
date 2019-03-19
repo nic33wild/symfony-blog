@@ -7,21 +7,29 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 final class CategoryAdmin extends AbstractAdmin
 {
+    
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title', TextType::class)->add('description');
+        $formMapper
+            ->add('title', TextType::class)
+            ->add('description', TextareaType::class);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('title');
+        $datagridMapper
+            ->add('title')
+            ->add('description');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title')->add('description');
+        $listMapper
+            ->addIdentifier('title')
+            ->add('description');
     }
 }
