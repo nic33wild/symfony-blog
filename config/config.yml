@@ -1,0 +1,9 @@
+fos_ck_editor:
+    default_config: creation_form
+    configs:
+        creation_form:
+            toolbar: [ ["Source", "-", "Save"], "/", ["Anchor"], "/", ["Maximize"] ]
+            uiColor:                "#000000"
+            filebrowserUploadRoute: "my_route"
+            extraPlugins:           "wordcount"
+            
