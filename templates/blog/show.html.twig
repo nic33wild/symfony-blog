@@ -27,6 +27,8 @@
         </div>
         {% endfor %}
         
+        <hr>
+        
         {% if app.user %}
         {{ form_start(commentForm) }}
         {{ form_row(commentForm.author, {'attr': {'placeholder': "Your name"}})}}
@@ -36,7 +38,6 @@
         </button>
         {{ form_end(commentForm) }}
         {% else %}
-
             <h2>If you want to write a comment you have to login.</h2>
             <a href="{{ path('security_login')}}" class="btn btn-primary">
                 Connect

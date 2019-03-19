@@ -1,0 +1,35 @@
+$color_titles: #2C3E50;
+$color_background: #d0ddf1;
+
+@import url("https://fonts.googleapis.com/css?family=Margarine:400,700|Open+Sans:100,300,400");
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    background: $color_background;
+}
+
+h1 {
+    font-family: 'Margarine', sans-serif;
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color_titles;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+img{
+    padding-bottom: 15px;
+}
+
+h2{
+    font-family: 'Margarine', sans-serif;
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 400;
+    color: $color_titles;
+    margin-top: 10px;
+}
+
