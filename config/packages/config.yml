@@ -1,0 +1,4 @@
+fos_ck_editor:
+    autoload: true
+    base_path: "build/ckeditor"
+    js_path:   "build/ckeditor/ckeditor.js"
