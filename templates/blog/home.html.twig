@@ -1,18 +1,23 @@
 {% extends 'base.html.twig' %} {% block body %}
-<h1>Welcome to my Symfony 4 Blog</h1>
+
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-xs-6">
-      <img src="https://lorempixel.com/640/480/" alt="Nicola_photo" />
-    </div>
+    <div class="col-lg col-xs text-center">
+        <h1>Welcome to my Symfony 4 Blog</h1>
+        
+      <img src="{{ asset('build/Me.png') }}" class="mx-auto d-block">
 
-    <div class="col-lg-4 col-xs-6">
+    </div>
+    
+    <div class="col-lg-12 col-xs-12 text-center">
       <p>
         Hi. I am an italian Web Developer. This site is an example of Blog
         developed with Symfony 4. 
       </p>
+    </div>
 
-      <h3 id="technologies">Technologies used in this project</h3>
+    <div class="col-lg-6 offset-lg-3">
+      <h3 id="technologies">Technologies and bundles used in this project</h3>
       <ul>
         <li>Symfony 4</li>
         <li>PHP</li>
@@ -26,6 +31,7 @@
         <li>Doctrine fixtures bundle</li>
         <li>Symfony security bundle</li>
         <li>CKEditor</li>
+        <li>Bootstrap</li>
         <li>and more ...</li>
       </ul>
       <p><small>N.B. All images are charged randomly from lorempixel.com.</small></p>
@@ -35,7 +41,7 @@
 
   <div class="container" id="homePage">
     <div class="row">
-      <div class="col-lg-12 col-xs">
+      <div class="col-lg-8 offset-lg-2">
         <h2>What you should know about this project:</h2>
 
         <h3 id="routes">Routes</h3>
@@ -74,9 +80,9 @@
         <h3 id="progress">Work Progress</h3>
         <p>
           Actually with login it is possible to visualize differents buttons and
-          publics comments but all users have the same role 'ROLE_USER' and all
-          users can use Sonata admin dashboard or create/edit articles and
-          categories. Different authorizations for different roles with secure
+          public comments but all users have the same role 'ROLE_USER'. All
+          users can use Sonata admin dashboard or create/edit contents of articles and
+          categories using CKEditor. Different authorizations for different roles with secure
           authentication COMING SOON
         </p>
       </div>

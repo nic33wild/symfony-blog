@@ -15,4 +15,8 @@ require('@fortawesome/fontawesome-free/js/all.js');
 const $ = require('jquery');
 require('bootstrap');
 
+const imageHomePath = require('../images/Me.png');
+
+var html = `<img src="${ imageHomePath }">`;
+
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

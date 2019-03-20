@@ -63,6 +63,7 @@ Encore
         {from: './node_modules/ckeditor/plugins', to: 'ckeditor/plugins/[path][name].[ext]'},
         {from: './node_modules/ckeditor/skins', to: 'ckeditor/skins/[path][name].[ext]'}
     ])
+    .copyFiles({from: './assets/images'})
     .addLoader({test: /\.json$/i, include: [path.resolve(__dirname, 'node_modules/ckeditor')], loader: 'raw-loader', type: 'javascript/auto'})
 ;
 
