@@ -20,7 +20,7 @@ class ArticleType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'title'
             ])
-            ->add('content', CKEditorType::class)
+            ->add('content', 'ckeditor')
             ->add('image')
         ;
     }

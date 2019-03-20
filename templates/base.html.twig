@@ -81,7 +81,10 @@
     </div>
 
     {% block javascripts %}
-    
+    {# <script>
+      window.CKEDITOR_BASEPATH = '.././public/build/ckeditor/';
+      alert( CKEDITOR_BASEPATH );
+    </script> #}
     {{ encore_entry_script_tags("app") }}
 
     <!-- Renders app.js & a webpack runtime.js file
